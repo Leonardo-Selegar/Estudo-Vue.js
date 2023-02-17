@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>Primeiro App</h1>
+    <p>Bem vindo {{nome}}</p>
+    <p> {{ bemVindo() }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app', // qual elemento que voce quer que o vue comece a cuidar
+        data(){
+            return{
+                nome: 'Leonardo',
+                idade: 23
+            }
+        },
+        methods: {
+            bemVindo() {
+                const str = `Bem vindo ${this.nome} ${this.idade} anos`
+                return str;
+            }
+        }
+    })
+</script>
