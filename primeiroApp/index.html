@@ -1,9 +1,11 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
-    <h1>Primeiro App</h1>
-    <p>Bem vindo {{nome}}</p>
-    <p> {{ bemVindo() }}</p>
+    <h1>Usuário: {{nome}}</h1>
+    <h1>{{numero}}</h1>
+    <a v-bind:href="canal">Canal Youtube</a>
+    <button v-on:click="entrar('Selegar')">Entrar</button>
+    <button v-on:click.once="soma(5)">Numero</button> <!--só executa uma vez -->
 </div>
 
 <script>
@@ -12,13 +14,16 @@
         data(){
             return{
                 nome: 'Leonardo',
-                idade: 23
+                canal: 'https://youtube.com/aula2',
+                numero: 10,
             }
         },
         methods: {
-            bemVindo() {
-                const str = `Bem vindo ${this.nome} ${this.idade} anos`
-                return str;
+            entrar(nome) {
+                this.nome = nome;
+            },
+            soma(numero) {
+                this.numero += numero;
             }
         }
     })
