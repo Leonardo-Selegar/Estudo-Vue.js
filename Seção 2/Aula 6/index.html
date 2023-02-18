@@ -1,0 +1,43 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <h1>{{nome}}</h1>
+  <p>Nome grande: {{resultadoNome }}</p>
+  <button v-on:click="somar">Somar #</button>
+  <hr>
+  <h1>{{numero}}</h1>
+  <button v-on:click="numero++">Somar Numero</button>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data(){
+      return{
+        nome: 'Leonardo',
+        numero: 10,
+      }
+    },
+    methods: {
+      somar(){
+        this.nome += '#';
+      },
+    },
+    computed: {
+      resultadoNome(){ 
+        return this.nome.length >= 10 ? 'Mais que 10 letras' : 'Menos de 10 letras';
+      }
+    },
+    watch: {
+      numero(novo, antigo){
+        // sempre que nome mudar ele chama esse watch e pode ser async
+        console.log('Novo valor: ' + novo);
+        console.log('Antigo valor: ' + antigo);
+
+        setTimeout(() => {
+          this.numero = 999;
+        }, 2000);
+      }
+    }
+  })
+</script>
