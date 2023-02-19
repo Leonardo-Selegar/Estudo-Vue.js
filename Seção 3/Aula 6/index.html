@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <ul>
+    <li v-for="(tech, index) in tecnologias" :key="tech">{{tech}} - {{index}}</li>
+  </ul>
+
+  <div v-for="aluno in alunos" :key="aluno.id">
+    <p>{{aluno.id}} - {{aluno.nome}}</p>
+    <p>Status do curso: {{aluno.status}}</p>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data(){
+      return{
+        tecnologias: ['JavaScript', 'PHP', 'NODE.JS', 'VUE.JS'],
+        alunos: [
+          {id: 1, nome: 'Matheus', status: 'cursando'},
+          {id: 2, nome: 'Leonardo', status: 'cursando'},
+          {id: 3, nome: 'Lucas', status: 'concluido'},
+        ]
+      }
+    },
+  })
+</script>
