@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <h1 v-if="auth">Bem vindo: {{usuario}}</h1>
+  <h1 v-else-if="visitante">Usuario: Visitante</h1>
+  <p v-else>Nenhum usuario está logado...</p>
+
+  <button
+    @click="auth = !auth"
+  >
+    {{ auth ? 'Deslogar' : 'Entrar'}}
+  </button>
+  <button
+    @click="visitante = !visitante"
+  >
+    {{ visitante ? 'Deslogar do visitante' : 'Entrar como visitante'}}
+  </button>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data(){
+      return{
+        usuario: 'Sujeito Programador',
+        auth: false,
+        visitante: false,
+      }
+    },
+  })
+</script>
