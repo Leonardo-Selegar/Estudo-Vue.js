@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped> /* esse css só funciona no Usuario*/
     h2{
         color: red;
     }
