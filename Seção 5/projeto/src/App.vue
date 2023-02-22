@@ -1,32 +1,37 @@
 <template>
   <div id="app">
+
     <h1>Bem vindo ao meu primeiro projeto!</h1>
+    <p>Componente App:  {{nome}}</p>
+
     <button @click="entrar">Entrar</button>
-    <UsuarioTeste :nome="nome"/>
+
+    <Usuario :nome="nome" @nomeCurso="nome = $event" />
+
   </div>
 </template>
 
 <script>
-import UsuarioTeste from './components/UsuarioTeste.vue';
+import Usuario from './components/Usuario';
 
   export default{
     name: 'App',
     components:{
-      UsuarioTeste
+      Usuario
     },
     data(){
       return{
         nome:'Sujeito Programador'
       }
     },
-    methods: {
-      entrar() {
+    methods:{
+      entrar(){
         this.nome = 'Curso Vue JS';
       }
     }
   }
 </script>
 
-<style>
+<style scped>
 
 </style>

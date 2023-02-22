@@ -1,4 +1,4 @@
-# props
+# projeto
 
 ## Project setup
 ```
