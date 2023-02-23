@@ -2,8 +2,9 @@
   <div id="app">
     <h1>Componente App :)</h1>
     <ComponentUsuario>
-      <strong>Bem vindo!!!</strong>
-      <p>Meu nome é: {{ nome }}</p>
+      <strong slot="titulo">Bem vindo!!!</strong>
+      <p slot="user">Meu nome é: {{ nome }}</p>
+      <h1>nome usuario</h1>
     </ComponentUsuario>
   </div>
 </template>
