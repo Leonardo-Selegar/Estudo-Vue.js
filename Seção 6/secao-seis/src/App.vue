@@ -27,7 +27,12 @@
         <label for="vue">
           <input type="checkbox" v-model="tecnologias" value="vue.js" id="vue">
           vue.js
-        </label>
+        </label><br>
+
+        <label>Qual tipo de contratação:</label>
+        <select v-model="contratoSelected">
+          <option v-for="contrato in contratos" :key="contrato.id" :value="contrato.nome">{{contrato.nome}}</option>
+        </select>
       </form>
     </div>
     <hr>
@@ -41,6 +46,7 @@
       <ul>
         <li v-for="tech in tecnologias" :key="tech"> {{ tech }}</li>
       </ul>
+      <label for="">Tipo de contratação: {{ contratoSelected }}</label>
     </div>
   </div>
 </template>
@@ -57,6 +63,13 @@ export default {
       qtdfunc: 0,
       opiniao: '',
       tecnologias: [],
+      contratos: [
+        { id: 1, nome:'Freelancer'},
+        { id: 2, nome:'CLT'},
+        { id: 3, nome:'PJ'},
+        { id: 4, nome: 'Remoto'}
+      ],
+      contratoSelected: 'Freelancer',
     }
   }
 }
