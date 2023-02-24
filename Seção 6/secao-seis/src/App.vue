@@ -32,7 +32,21 @@
         <label>Qual tipo de contratação:</label>
         <select v-model="contratoSelected">
           <option v-for="contrato in contratos" :key="contrato.id" :value="contrato.nome">{{contrato.nome}}</option>
-        </select>
+        </select><br>
+
+        <label>Qual seu nível: </label>
+        <label for="basico">
+          <input type="radio" value="basico" id="básico" v-model="nivel">
+          Básico
+        </label>
+        <label for="intermediario">
+          <input type="radio" value="intermediario" id="intermediario" v-model="nivel">
+          Intermediário
+        </label>
+        <label for="avancado">
+          <input type="radio" value="avançado" id="avancado" v-model="nivel">
+          Avançado
+        </label>
       </form>
     </div>
     <hr>
@@ -46,7 +60,8 @@
       <ul>
         <li v-for="tech in tecnologias" :key="tech"> {{ tech }}</li>
       </ul>
-      <label for="">Tipo de contratação: {{ contratoSelected }}</label>
+      <label for="">Tipo de contratação: {{ contratoSelected }}</label><br>
+      <label for="">O seu nível é: {{ nivel }}</label>
     </div>
   </div>
 </template>
@@ -70,6 +85,7 @@ export default {
         { id: 4, nome: 'Remoto'}
       ],
       contratoSelected: 'Freelancer',
+      nivel: 'basico',
     }
   }
 }
