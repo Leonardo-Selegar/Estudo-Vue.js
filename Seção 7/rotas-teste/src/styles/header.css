@@ -1,0 +1,27 @@
+#header{
+  display: flex;
+  justify-content: space-around;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+ul li{
+  background: brown;
+  margin: 3px;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+.rota{
+  color: white;
+  text-decoration: none;
+  margin-left: 5px;
+  font-size: 25px;
+}
