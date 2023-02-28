@@ -3,7 +3,13 @@
     <h1>Sujeito Programador</h1>
     <ul>
       <li>
-        <router-link to="/" class="rota">Home</router-link>
+        <router-link 
+          to="/" class="rota" 
+          active-class="ativo"
+          exact
+        >
+          Home
+        </router-link>
       </li>
       <li>
         <router-link to="/produto" class="rota">Produto</router-link>
