@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 
 import Home from '../pages/Home.vue';
 import Produto from '../pages/produto/Produto';
+import MeusProdutos from '../pages/produto/MeusProdutos.vue';
+import Editar from '../pages/produto/Editar.vue';
+import Detalhe from '../pages/produto/Detalhe.vue';
 
 Vue.use(VueRouter)
 
@@ -15,14 +18,14 @@ const routes = [
   {
     path: '/produto',
     name: 'produto',
-    component: Produto
-  },
-  {
-    path: '/produto/:id',
-    name: 'produto',
     component: Produto,
-    props: true
-  }
+    children: [
+      {path: '', component: MeusProdutos},
+      {path: ':id', component: Detalhe, props: true},
+      {path: ':id/editar', component: Editar, props: true},
+    ]
+  },
+ 
 ]
 
 const router = new VueRouter({

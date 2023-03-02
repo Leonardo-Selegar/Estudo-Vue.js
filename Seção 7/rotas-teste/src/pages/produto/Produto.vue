@@ -1,7 +1,8 @@
 <template>
   <div id="produto">
     <h1>Tela Produto</h1>
-    <h1>Código do produto: <strong>{{ this.id }}</strong></h1>
+    <br/>
+    <router-view/>
     <button @click="irHome">Ir para a home</button>
   </div>
 </template>
@@ -10,7 +11,6 @@
 /* eslint-disable */
 export default {
   name: 'Produto',
-  props: ['id'],
   methods:{
     irHome(){
       this.$router.push('/')
@@ -19,6 +19,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

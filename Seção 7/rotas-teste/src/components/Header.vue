@@ -12,7 +12,9 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/produto" class="rota">Produto</router-link>
+        <router-link to="/produto" class="rota">
+          Produto
+        </router-link>
       </li>
     </ul>
     
