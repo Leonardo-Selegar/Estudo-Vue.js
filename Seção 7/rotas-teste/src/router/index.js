@@ -25,6 +25,11 @@ const routes = [
       {path: ':id/editar', component: Editar, props: true, name: 'editar'},
     ]
   },
+  {
+    path: '*',
+    name: 'home',
+    component: Home
+  }
  
 ]
 
