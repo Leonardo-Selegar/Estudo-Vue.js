@@ -11,7 +11,12 @@
 <script>
 export default {
   name: 'ProductEdit',
-  props: ['id']
+  props: ['id'],
+  beforeRouteLeave(to, from, next){
+    // chama antes de sair da rota e pode acessar o this
+    const response = window.confirm('Você realmente deseja sair da pagina?');
+    response ? next() : next(false);
+  }
 }
 </script>
 

@@ -19,7 +19,12 @@
 
 export default {
   name: 'ProductsDetails',
-  props: ['id']
+  props: ['id'],
+  beforeRouteEnter(to, from, next) {
+    // beforeRouteEnter n pode acessar o this, pois nem criou o component ainda
+    console.log('Antes de entrar na rota detalhe');
+    next()
+  }
 }
 </script>
 

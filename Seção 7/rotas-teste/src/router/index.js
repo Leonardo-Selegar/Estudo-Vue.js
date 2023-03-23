@@ -19,10 +19,11 @@ const routes = [
     path: '/produto',
     name: 'produto',
     component: Produto,
+    beforeEnter: (to, from, next) => { console.log('ANTES DA ROTA PRODUTO'); next()},
     children: [
       {path: '', component: MeusProdutos},
       {path: ':id', component: Detalhe, props: true},
-      {path: ':id/editar', component: Editar, props: true, name: 'editar'},
+      {path: ':id/editar', component: Editar, props: true, name: 'editar' },
     ]
   },
   {
@@ -38,5 +39,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+//router.beforeEach((to, from, next) => {
+//  console.log('CHAMADO ANTES DAS ROTAS');
+//  next();
+//})
 
 export default router
